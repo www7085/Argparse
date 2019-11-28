@@ -1,7 +1,11 @@
 import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("-v", "--verbose", help="increase output verbosity",
-                    action="store_true")
+
+# 建立一個參數解析器，並為程式功能加上說明
+parser = argparse.ArgumentParser(description='Sum')
+
+parser.add_argument('N', type=int, nargs='+')
+
+# 解析參數
 args = parser.parse_args()
-if args.verbose:
-    print("verbosity turned on")
+
+print(sum(args.N))
